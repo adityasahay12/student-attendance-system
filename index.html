@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Attendance Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> College Attendance Management</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <button class="tab-btn active" data-tab="add-student">
+                    <i class="fas fa-user-plus"></i> Add Student
+                </button>
+                <button class="tab-btn" data-tab="mark-attendance">
+                    <i class="fas fa-calendar-check"></i> Mark Attendance
+                </button>
+                <button class="tab-btn" data-tab="view-report">
+                    <i class="fas fa-chart-bar"></i> View Report
+                </button>
+            </div>
+
+            <div class="content">
+                <!-- Add Student Section -->
+                <div class="tab-content active" id="add-student">
+                    <h2><i class="fas fa-user-plus"></i> Add New Student</h2>
+                    <form id="addStudentForm">
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentName">Full Name</label>
+                            <input type="text" id="studentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="branch">Branch</label>
+                            <select id="branch" required>
+                                <option value="">Select Branch</option>
+                                <option value="CSE">Computer Science</option>
+                                <option value="ECE">Electronics</option>
+                                <option value="ME">Mechanical</option>
+                                <option value="CE">Civil</option>
+                                <option value="CE">Agriculture</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester" required>
+                                <option value="">Select Semester</option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                                <option value="3">3rd Semester</option>
+                                <option value="4">4th Semester</option>
+                                <option value="5">5th Semester</option>
+                                <option value="6">6th Semester</option>
+                                <option value="7">7th Semester</option>
+                                <option value="8">8th Semester</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Add Student
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Mark Attendance Section -->
+                <div class="tab-content" id="mark-attendance">
+                    <h2><i class="fas fa-calendar-check"></i> Mark Attendance</h2>
+                    <div class="filter-section">
+                        <select id="attendanceBranch">
+                            <option value="">Select Branch</option>
+                            <option value="CSE">Computer Science</option>
+                            <option value="ECE">Electronics</option>
+                            <option value="ME">Mechanical</option>
+                            <option value="CE">Civil</option>
+                            <option value="CE">Agriculture</option>
+                        </select>
+                        <select id="attendanceSemester">
+                            <option value="">Select Semester</option>
+                            <option value="1">1st Semester</option>
+                            <option value="2">2nd Semester</option>
+                            <option value="3">3rd Semester</option>
+                            <option value="4">4th Semester</option>
+                            <option value="5">5th Semester</option>
+                            <option value="6">6th Semester</option>
+                            <option value="7">7th Semester</option>
+                            <option value="8">8th Semester</option>
+                        </select>
+                        <button id="loadStudents" class="btn-primary">
+                            <i class="fas fa-sync"></i> Load Students
+                        </button>
+                    </div>
+                    <div id="attendanceList" class="attendance-list"></div>
+                    <button id="saveAttendance" class="btn-primary" style="display: none;">
+                        <i class="fas fa-save"></i> Save Attendance
+                    </button>
+                </div>
+
+                <!-- View Report Section -->
+                <div class="tab-content" id="view-report">
+                    <h2><i class="fas fa-chart-bar"></i> View Attendance Report</h2>
+                    <div class="search-section">
+                        <input type="text" id="searchInput" placeholder="Search by Student ID or Name">
+                        <button id="searchBtn" class="btn-primary">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    <div id="reportResult" class="report-result"></div>
+                    <div id="loadingIndicator" class="loading-indicator">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<footer>
+    <div class="container project-details">
+        <h3>Project Details</h3>
+        <div class="college-info">
+            <img src="assets/image/logo.jpg" alt="College Logo" class="college-logo">
+            <p><strong>College Name:</strong> Buddha Institute of Technology </p>
+        </div>
+        <div class="team-details">
+            <h4>Team Members:</h4>
+            <ul>
+                <li>Aryan Raj (21105118007)</li>
+                <li>Aditya (21105118002)</li>
+                <li>Anurag Raj (21105118003)</li>
+                <li>Deeraj Kumar Jha (21105118005)</li>
+                <li>Nelofer Tarannum (21105118004)</li>
+            </ul>
+        </div>
+    </div>
+</footer>
