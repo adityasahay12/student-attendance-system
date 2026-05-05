@@ -7,7 +7,7 @@ A web-based Attendance Management System designed for colleges to efficiently tr
 - Add and manage student records (ID, Name, Branch, Semester)
 - Mark daily attendance with real-time updates
 - Filter students by branch and semester
-- Search students by ID or name
+- Search students by ID or name 
 - View detailed attendance reports with percentage calculation
 - Responsive UI for all devices
 
