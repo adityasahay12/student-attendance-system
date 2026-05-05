@@ -1,6 +1,6 @@
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDPtS-hMl0e_bEWXA7B3OKThF283bp_DKY",
+    apiKey: "XXXX",
     authDomain: "college-df1de.firebaseapp.com",
     databaseURL: "https://college-df1de-default-rtdb.firebaseio.com",
     projectId: "college-df1de",
